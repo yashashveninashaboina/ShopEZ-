@@ -199,14 +199,14 @@ const ProductDetail = () => {
             <div className="mb-4">
               {product.discountPrice > 0 ? (
                 <div className="d-flex align-items-baseline gap-3">
-                  <h2 className="text-primary fw-bold mb-0">${product.discountPrice}</h2>
-                  <h4 className="text-muted text-decoration-line-through mb-0">${product.price}</h4>
+                  <h2 className="text-primary fw-bold mb-0">₹{product.discountPrice}</h2>
+                  <h4 className="text-muted text-decoration-line-through mb-0">₹{product.price}</h4>
                   <span className="badge bg-danger rounded-pill px-3 py-2">
-                    Save ${product.price - product.discountPrice}
+                    Save ₹{product.price - product.discountPrice}
                   </span>
                 </div>
               ) : (
-                <h2 className="text-dark fw-bold">${product.price}</h2>
+                <h2 className="text-dark fw-bold">₹{product.price}</h2>
               )}
             </div>
 

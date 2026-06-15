@@ -131,7 +131,7 @@ const Home = () => {
             <i className="bi bi-truck fs-1 text-primary"></i>
             <div>
               <h6 className="mb-1 fw-bold">Free Shipping</h6>
-              <p className="mb-0 text-muted small">On all orders above $100</p>
+              <p className="mb-0 text-muted small">On all orders above ₹1,000</p>
             </div>
           </div>
         </Col>

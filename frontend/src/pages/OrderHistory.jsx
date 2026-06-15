@@ -130,8 +130,8 @@ const OrderHistory = () => {
                   <tr>
                     <td>${item.name}</td>
                     <td class="text-center">${item.quantity}</td>
-                    <td class="text-end">$${item.price.toFixed(2)}</td>
-                    <td class="text-end">$${(item.price * item.quantity).toFixed(2)}</td>
+                    <td class="text-end">₹${item.price.toFixed(2)}</td>
+                    <td class="text-end">₹${(item.price * item.quantity).toFixed(2)}</td>
                   </tr>
                 `).join('')}
               </tbody>
@@ -141,20 +141,20 @@ const OrderHistory = () => {
               <div class="col-4 text-end">
                 <div class="d-flex justify-content-between mb-1">
                   <span class="text-muted">Items Subtotal:</span>
-                  <span>$${order.itemsPrice.toFixed(2)}</span>
+                  <span>₹${order.itemsPrice.toFixed(2)}</span>
                 </div>
                 <div class="d-flex justify-content-between mb-1">
                   <span class="text-muted">Shipping Charges:</span>
-                  <span>${order.shippingPrice === 0 ? 'FREE' : `$${order.shippingPrice.toFixed(2)}`}</span>
+                  <span>${order.shippingPrice === 0 ? 'FREE' : `₹${order.shippingPrice.toFixed(2)}`}</span>
                 </div>
                 <div class="d-flex justify-content-between mb-2">
                   <span class="text-muted">GST/Sales Tax (8.25%):</span>
-                  <span>$${order.taxPrice.toFixed(2)}</span>
+                  <span>₹${order.taxPrice.toFixed(2)}</span>
                 </div>
                 <hr>
                 <div class="d-flex justify-content-between">
                   <span class="fw-bold">Grand Total:</span>
-                  <span class="fw-bold text-primary fs-5">$${order.totalPrice.toFixed(2)}</span>
+                  <span class="fw-bold text-primary fs-5">₹${order.totalPrice.toFixed(2)}</span>
                 </div>
               </div>
             </div>
@@ -180,13 +180,13 @@ const OrderHistory = () => {
       case 'Pending':
         return <Badge bg="warning" className="badge-status-pending text-uppercase px-3 py-2">Pending</Badge>;
       case 'Shipped':
-        return <Badge bg="blue" className="badge-status-shipped text-uppercase px-3 py-2">Shipped</Badge>;
+        return <Badge bg="primary" className="badge-status-shipped text-uppercase px-3 py-2">Shipped</Badge>;
       case 'Delivered':
         return <Badge bg="success" className="badge-status-delivered text-uppercase px-3 py-2">Delivered</Badge>;
       case 'Cancelled':
         return <Badge bg="danger" className="badge-status-cancelled text-uppercase px-3 py-2">Cancelled</Badge>;
       case 'Returned':
-        return <Badge bg="purple" className="badge-status-returned text-uppercase px-3 py-2">Returned</Badge>;
+        return <Badge bg="secondary" className="badge-status-returned text-uppercase px-3 py-2">Returned</Badge>;
       default:
         return <Badge bg="secondary" className="text-uppercase px-3 py-2">{status}</Badge>;
     }
@@ -229,7 +229,7 @@ const OrderHistory = () => {
                   </Col>
                   <Col sm={2}>
                     <div className="text-muted small text-uppercase">Total Price</div>
-                    <span className="fw-bold text-primary">${order.totalPrice.toFixed(2)}</span>
+                    <span className="fw-bold text-primary">₹{order.totalPrice.toFixed(2)}</span>
                   </Col>
                   <Col sm={2}>
                     <div className="text-muted small text-uppercase">Status</div>
@@ -261,11 +261,11 @@ const OrderHistory = () => {
                         />
                         <div>
                           <h6 className="mb-0 fw-bold small">{item.name}</h6>
-                          <small className="text-muted">Quantity: {item.quantity} x ${item.price}</small>
+                          <small className="text-muted">Quantity: {item.quantity} x ₹{item.price}</small>
                         </div>
                       </div>
                       <div className="text-end">
-                        <span className="fw-semibold">${(item.price * item.quantity).toFixed(2)}</span>
+                        <span className="fw-semibold">₹{(item.price * item.quantity).toFixed(2)}</span>
                       </div>
                     </div>
                   ))}

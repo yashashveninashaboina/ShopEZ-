@@ -470,10 +470,10 @@ const Checkout = () => {
                           />
                           <div>
                             <span className="fw-semibold small d-block">{item.product.name}</span>
-                            <small className="text-muted">Qty: {item.quantity} x ${price}</small>
+                            <small className="text-muted">Qty: {item.quantity} x ₹{price}</small>
                           </div>
                         </div>
-                        <span className="fw-bold text-dark">${(price * item.quantity).toFixed(2)}</span>
+                        <span className="fw-bold text-dark">₹{(price * item.quantity).toFixed(2)}</span>
                       </div>
                     );
                   })}
@@ -515,7 +515,7 @@ const Checkout = () => {
               {activeCartItems.map(item => (
                 <div key={item._id} className="d-flex justify-content-between small text-muted">
                   <span className="text-truncate" style={{ maxWidth: '200px' }}>{item.product.name} (x{item.quantity})</span>
-                  <span>${((item.product.discountPrice > 0 ? item.product.discountPrice : item.product.price) * item.quantity).toFixed(2)}</span>
+                  <span>₹{((item.product.discountPrice > 0 ? item.product.discountPrice : item.product.price) * item.quantity).toFixed(2)}</span>
                 </div>
               ))}
             </div>
@@ -524,24 +524,24 @@ const Checkout = () => {
 
             <div className="d-flex justify-content-between mb-2 small text-muted">
               <span>Items Total</span>
-              <span>${prices.itemsPrice.toFixed(2)}</span>
+              <span>₹{prices.itemsPrice.toFixed(2)}</span>
             </div>
             
             <div className="d-flex justify-content-between mb-2 small text-muted">
               <span>Shipping</span>
-              <span>{prices.shippingPrice === 0 ? 'FREE' : `$${prices.shippingPrice.toFixed(2)}`}</span>
+              <span>{prices.shippingPrice === 0 ? 'FREE' : `₹${prices.shippingPrice.toFixed(2)}`}</span>
             </div>
             
             <div className="d-flex justify-content-between mb-3 small text-muted">
               <span>Tax (8.25%)</span>
-              <span>${prices.taxPrice.toFixed(2)}</span>
+              <span>₹{prices.taxPrice.toFixed(2)}</span>
             </div>
             
             <hr className="my-3" />
             
             <div className="d-flex justify-content-between mb-2">
               <span className="fw-bold">Total Price</span>
-              <span className="text-primary fw-bold fs-4">${prices.totalPrice.toFixed(2)}</span>
+              <span className="text-primary fw-bold fs-4">₹{prices.totalPrice.toFixed(2)}</span>
             </div>
 
             <div className="bg-white border rounded-3 p-3 mt-4 small text-muted text-center">

@@ -316,7 +316,7 @@ const AdminDashboard = () => {
       labels,
       datasets: [
         {
-          label: 'Monthly Sales ($)',
+          label: 'Monthly Sales (₹)',
           data,
           fill: false,
           borderColor: '#4f46e5',
@@ -369,7 +369,7 @@ const AdminDashboard = () => {
                 <Col md={3}>
                   <Card className="border-0 shadow-sm p-3 text-center h-100" style={{ borderRadius: '12px', borderLeft: '4px solid #4f46e5' }}>
                     <div className="text-muted small text-uppercase fw-semibold">Total Revenue</div>
-                    <h3 className="fw-bold text-primary mt-2">${stats.summary.totalSales.toFixed(2)}</h3>
+                    <h3 className="fw-bold text-primary mt-2">₹{stats.summary.totalSales.toFixed(2)}</h3>
                   </Card>
                 </Col>
                 <Col md={3}>
@@ -432,7 +432,7 @@ const AdminDashboard = () => {
                       <tr key={ord._id}>
                         <td className="small">{ord._id.toUpperCase()}</td>
                         <td>{ord.user?.name || 'Guest User'}</td>
-                        <td className="fw-bold text-primary">${ord.totalPrice}</td>
+                        <td className="fw-bold text-primary">₹{ord.totalPrice}</td>
                         <td>{ord.isPaid ? <Badge bg="success">YES</Badge> : <Badge bg="danger">NO</Badge>}</td>
                         <td>{ord.orderStatus}</td>
                       </tr>
@@ -477,7 +477,7 @@ const AdminDashboard = () => {
                       </div>
                     </td>
                     <td>{p.category?.name || 'None'}</td>
-                    <td className="fw-bold">${p.price}</td>
+                    <td className="fw-bold">₹{p.price}</td>
                     <td>
                       {p.stock === 0 ? (
                         <Badge bg="danger">Out of Stock</Badge>
@@ -570,7 +570,7 @@ const AdminDashboard = () => {
                     <tr key={ord._id}>
                       <td className="small">{ord._id.toUpperCase()}</td>
                       <td>{ord.user?.name || 'Guest'}</td>
-                      <td className="fw-bold">${ord.totalPrice}</td>
+                      <td className="fw-bold">₹{ord.totalPrice}</td>
                       <td>{ord.paymentMethod}</td>
                       <td>
                         {ord.isPaid ? (
@@ -625,7 +625,7 @@ const AdminDashboard = () => {
                         <td className="small">{ret._id.toUpperCase()}</td>
                         <td className="small">{ret.order?._id.toUpperCase()}</td>
                         <td>{ret.user?.name || 'User'}</td>
-                        <td className="fw-bold text-danger">${ret.refundAmount}</td>
+                        <td className="fw-bold text-danger">₹{ret.refundAmount}</td>
                         <td className="small text-muted">{ret.reason}</td>
                         <td>
                           <Badge bg={ret.status === 'Refunded' ? 'success' : ret.status === 'Approved' ? 'primary' : 'warning'}>
@@ -734,7 +734,7 @@ const AdminDashboard = () => {
 
             <Row className="g-3 mb-3">
               <Col sm={4}>
-                <Form.Label className="small text-muted fw-semibold">Base Price ($) *</Form.Label>
+                <Form.Label className="small text-muted fw-semibold">Base Price (₹) *</Form.Label>
                 <Form.Control
                   type="number"
                   placeholder="e.g. 49"
@@ -744,7 +744,7 @@ const AdminDashboard = () => {
                 />
               </Col>
               <Col sm={4}>
-                <Form.Label className="small text-muted fw-semibold">Discount Price ($)</Form.Label>
+                <Form.Label className="small text-muted fw-semibold">Discount Price (₹)</Form.Label>
                 <Form.Control
                   type="number"
                   placeholder="e.g. 39 (optional)"

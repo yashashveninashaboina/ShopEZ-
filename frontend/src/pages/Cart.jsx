@@ -126,7 +126,7 @@ const Cart = () => {
                               </div>
                             </td>
                             <td>
-                              <span className="fw-semibold">${productPrice}</span>
+                              <span className="fw-semibold">₹{productPrice}</span>
                             </td>
                             <td>
                               <div className="d-flex align-items-center border rounded-2 bg-light px-1" style={{ width: 'fit-content' }}>
@@ -136,7 +136,7 @@ const Cart = () => {
                               </div>
                             </td>
                             <td>
-                              <span className="text-primary fw-bold">${productPrice * item.quantity}</span>
+                              <span className="text-primary fw-bold">₹{productPrice * item.quantity}</span>
                             </td>
                             <td>
                               <button onClick={() => handleRemove(item._id)} className="btn text-danger p-0">
@@ -187,7 +187,7 @@ const Cart = () => {
                               </div>
                             </td>
                             <td>
-                              <span className="fw-semibold">${productPrice}</span>
+                              <span className="fw-semibold">₹{productPrice}</span>
                             </td>
                             <td>
                               <Button
@@ -223,24 +223,24 @@ const Cart = () => {
                 
                 <div className="d-flex justify-content-between mb-2 small text-muted">
                   <span>Subtotal ({activeCartItems.length} items)</span>
-                  <span>${prices.itemsPrice.toFixed(2)}</span>
+                  <span>₹{prices.itemsPrice.toFixed(2)}</span>
                 </div>
                 
                 <div className="d-flex justify-content-between mb-2 small text-muted">
                   <span>Shipping</span>
-                  <span>{prices.shippingPrice === 0 ? 'FREE' : `$${prices.shippingPrice.toFixed(2)}`}</span>
+                  <span>{prices.shippingPrice === 0 ? 'FREE' : `₹${prices.shippingPrice.toFixed(2)}`}</span>
                 </div>
                 
                 <div className="d-flex justify-content-between mb-3 small text-muted">
                   <span>Tax (8.25%)</span>
-                  <span>${prices.taxPrice.toFixed(2)}</span>
+                  <span>₹{prices.taxPrice.toFixed(2)}</span>
                 </div>
                 
                 <hr className="my-3" />
                 
                 <div className="d-flex justify-content-between mb-4">
                   <span className="fw-bold">Total Price</span>
-                  <span className="text-primary fw-bold fs-4">${prices.totalPrice.toFixed(2)}</span>
+                  <span className="text-primary fw-bold fs-4">₹{prices.totalPrice.toFixed(2)}</span>
                 </div>
                 
                 <Button onClick={handleCheckout} className="btn-primary-gradient w-100 py-3 fs-6 fw-bold" style={{ borderRadius: '12px' }}>

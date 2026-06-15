@@ -109,9 +109,9 @@ export const CartProvider = ({ children }) => {
     return acc + price * item.quantity;
   }, 0);
 
-  // Standard E-Commerce rules: Free shipping over $100, otherwise $10. Tax is 8.25%
-  const shippingPrice = itemsPrice > 100 || itemsPrice === 0 ? 0 : 10;
-  const taxPrice = Math.round(itemsPrice * 0.0825 * 100) / 100;
+  // Standard E-Commerce rules: Free shipping over ₹1000, otherwise ₹100. GST is 18%
+  const shippingPrice = itemsPrice > 1000 || itemsPrice === 0 ? 0 : 100;
+  const taxPrice = Math.round(itemsPrice * 0.18 * 100) / 100;
   const totalPrice = Math.round((itemsPrice + shippingPrice + taxPrice) * 100) / 100;
 
   return (

@@ -158,7 +158,7 @@ const ProductListing = () => {
 
             {/* Price Range */}
             <div className="mb-4">
-              <Form.Label className="fw-semibold small text-uppercase text-muted">Price Range ($)</Form.Label>
+              <Form.Label className="fw-semibold small text-uppercase text-muted">Price Range (₹)</Form.Label>
               <Row className="g-2 mt-1">
                 <Col>
                   <Form.Control
