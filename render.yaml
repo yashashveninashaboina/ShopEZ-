@@ -26,10 +26,8 @@ services:
         sync: false
 
   # Frontend Vite Static Site
-  - type: web
+  - type: static
     name: shopez-frontend
-    runtime: static
-    plan: free
     rootDir: frontend
     buildCommand: npm install && npm run build
     staticPublishPath: dist
