@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { Container, Card, Table, Button, Badge, Spinner, Alert, Modal, Form } from 'react-bootstrap';
+import { useState, useEffect, useContext } from 'react';
+import { Container, Row, Col, Card, Button, Badge, Spinner, Modal, Form } from 'react-bootstrap';
 import api from '../utils/api';
 import { AuthContext } from '../context/AuthContext';
 import { toast } from 'react-toastify';
