@@ -153,17 +153,6 @@ http://localhost:5173
 
 ---
 
-## Screenshots
-
-Add screenshots of:
-
-* Home Page
-* Product Listing
-* Product Details
-* Cart
-* Wishlist
-* Checkout
-* Admin Dashboard
 
 ---
 
@@ -187,6 +176,4 @@ Add screenshots of:
 
 ---
 
-## License
 
-This project is licensed under the MIT License.
