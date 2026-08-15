@@ -24,15 +24,9 @@ services:
       - key: CLOUDINARY_API_SECRET
         sync: false
 
-  - type: web
-    name: shopez-frontend
-    runtime: static
-    rootDir: frontend
-    buildCommand: npm install && npm run build
-    staticPublishPath: dist
-    envVars:
-      - key: VITE_API_URL
-        fromService:
-          name: shopez-backend
-          type: web
-          property: host
+# Frontend Vite Static Site
+- type: static
+  name: shopez-frontend
+  rootDir: frontend
+  buildCommand: npm install --legacy-peer-deps && npm run build
+  staticPublishPath: dist
