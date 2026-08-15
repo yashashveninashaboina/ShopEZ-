@@ -1,5 +1,4 @@
 services:
-  # Backend Node.js Service
   - type: web
     name: shopez-backend
     runtime: node
@@ -25,16 +24,15 @@ services:
       - key: CLOUDINARY_API_SECRET
         sync: false
 
-# Frontend Vite Static Site
-- type: web
-  runtime: static
-  name: shopez-frontend
-  rootDir: frontend
-  buildCommand: npm install && npm run build
-  staticPublishPath: dist
-  envVars:
-    - key: VITE_API_URL
-      fromService:
-        name: shopez-backend
-        type: web
-        property: host
+  - type: web
+    name: shopez-frontend
+    runtime: static
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          name: shopez-backend
+          type: web
+          property: host
